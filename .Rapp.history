@@ -1,0 +1,291 @@
+class(my_data)
+c("patient","age","weight","bp","rating","test")
+cnames<-c("patient","age","weight","bp","rating","test")
+colnames(my_data,colnames)
+colnames(my_data)<-colnames
+info()
+colnames
+colnames(my_data)<-cnames
+my_data
+library(datasets)#
+data(mtcars)
+head(mtcars)
+mtcars$cycl==4
+mtcars$cyl==4
+mtcars[mtcars$cyl==4]
+mtcars[mtcars$cyl==4,]
+a<-mtcars[mtcars$cyl==4,]
+b<-mtcars[mtcars$cyl==8,]
+a
+b
+mean(a$hp)-mean(b$hp)
+data(iris)
+head(iris)
+iris[iris$Species==virginica]
+iris[iris$Species=="virginica"]
+iris[iris$Species=="virginica",]
+mean(iris[iris$Species=="virginica",]$Sepal.Length)
+tapply(mtcars$cyl, mtcars$mpg, mean)
+sapply(split(mtcars$mpg, mtcars$cyl), mean)
+mean(mtcars$mpg, mtcars$cyl)
+tapply(mtcars$mpg, mtcars$cyl, mean)
+126.5779with(mtcars, tapply(mpg, cyl, mean))
+with(mtcars, tapply(mpg, cyl, mean))
+set.seed(1)
+rpois(5.2)
+rpois(5,2)
+system.time()
+?rbinom
+?pbinom
+?qbinom
+?dbinom
+?ppois
+library(datasets)#
+Rprof()#
+fit <- lm(y ~ x1 + x2)#
+Rprof(NULL)
+y<-2
+x1<-3
+x2<-4
+library(datasets)#
+Rprof()#
+fit <- lm(y ~ x1 + x2)#
+Rprof(NULL)
+system.time()
+str(system.time)
+system.time(y)
+?gl
+gl(2,10)
+gl(3,10)
+gl(3,2)
+gl(10,2)
+set.seed(10)
+x<-rbinom(10,10,0.5)
+x
+e<-rnorm(10,0,20)
+e
+2*x
+2*x+e
+2*x+e+.5
+y<-2*x+e+.5
+summary(y)
+summary(x)
+summary(e)
+plot(x,y)
+set.seed(10)#
+x <- rbinom(10, 10, 0.5)#
+e <- rnorm(10, 0, 20)#
+y <- 0.5 + 2 * x + e
+plot(x,y)
+library(datasets)#
+Rprof()#
+fit <- lm(y ~ x1 + x2)#
+Rprof(NULL)
+x1<-1
+x2<-2
+library(datasets)#
+Rprof()#
+fit <- lm(y ~ x1 + x2)#
+Rprof(NULL)
+x1<-y
+x1<-x1/2
+x2<-x1*4
+library(datasets)#
+Rprof()#
+fit <- lm(y ~ x1 + x2)#
+Rprof(NULL)
+et.seed(10)#
+x <- rbinom(10, 10, 0.5)#
+e <- rnorm(10, 0, 20)#
+y <- 0.5 + 2 * x + e
+et.seed(10)#
+x <- rbinom(1000, 10, 0.5)#
+e <- rnorm(1000, 0, 20)#
+y <- 0.5 + 2 * x + e
+plot(x,y)
+symmary(y)
+summary(y)
+set.seed(1)
+rpois(5,2)
+library(datasets)
+Rprof()
+fit<-lm(y~x1+x2)
+y<-rnorm(10000,1,10)
+x1<-y+10
+x1<-x1/5+y
+fit<-lm(y~x1+x2)
+x2<-x1*3+y
+fit<-lm(y~x1+x2)
+Rprof(NULL)
+Rprof()
+fit<-lm(y~x1+x2)
+Rprof()
+ummaryRprof()
+summaryRprof()
+summaryRprof(fit)
+summaryRprof(fit,y)
+summaryRprof(Rprof(fit))
+summaryRprof()
+Rprof(fit)
+Rprof()
+fit<-lm(y~x1+x2)
+Rprof(NULL)
+summaryRprof("Rprof.out")
+library(datasets)#
+Rprof()#
+fit <- lm(y ~ x1 + x2)#
+Rprof(NULL)
+summaryRprof("Rprof.out")
+by.total
+library("xlsx")
+install.packages("rJava")
+install.packages("xlsxjars")
+library("xlsx")
+library(datasets)
+hist(airquality$Ozone)
+with(airquality,plot(Wind,Ozone))
+airquality<-transform(airquality, Month=factor(Month))
+Month, airquality, xlab="Month", ylab="Ozone"
+boxplot(Ozone~Month, airquality, xlab="Month", ylab="Ozone")
+library(datasets)
+with(faithful, plot(eruptions, waiting))
+title(main="Old Failthful Geyser data")
+dev.copy(png,file="geyserplot.png")
+dev.off()
+ls
+dir()
+rm("geyserplot.png")
+library(nlme)
+library(lattice)
+xyplot(weight~Time | Diet, BodyWeight)
+library(lattice)#
+library(datasets)#
+data(airquality)#
+p <- xyplot(Ozone ~ Wind | factor(Month), data = airquality)
+library(datasets)
+data(airquality)
+p<-xyplot(Ozone ~ Wind | factor(Month), data=airquality)
+airquality$Ozone
+airquality$Wind
+airquality$Month
+p<-xyplot(Ozone ~ Wind | factor(Month), airquality)
+library(lattice)
+library(datasets)
+xyplot(Ozone~wind, data=airquality)
+xyplot(Ozone~Wind, data=airquality)
+airquality<-transform(airquality, Month=factor(Month))
+xyplot(Ozone~Wind | Month, data=airquality, layout=c(5,1))
+set.seed(10)
+x<-rnorm(100)
+f<-rep(0:1, each=50)
+y<-x+f-f*x+ rnorm(100, sd=0.5)
+f<-factor(f,labels=c("First Group","Second Group"))
+xyplot(y~x |f, layout=c(2,1))
+xyplot(y~x |f, panel=function(x,y,...){})
+xyplot(y~x |f, panel=function(x,y,...){
+panel.xyplot(x,y,...)
+panel.abline(h=median(y), lty=2)}
+)
+panel.abline(h=median(y), col=2)}
+xyplot(y~x |f, panel=function(x,y,...){panel.xyplot(x,y,...)panel.lmline(x,y,col=2)})
+xyplot(y~x |f, panel=function(x,y,...) { panel.xyplot(x,y,...) panel.lmline(x,y,col=2) } )
+library(nlme)#
+library(lattice)#
+xyplot(weight ~ Time | Diet, BodyWeight)
+library(lattice)#
+library(datasets)#
+data(airquality)#
+p <- xyplot(Ozone ~ Wind | factor(Month), data = airquality)
+print(p)
+library(datasets)#
+data(airquality)
+qplot(Wind, Ozone, data = airquality, facets = . ~ factor(Month))
+install.packages("ggplot")
+library(ggplot2)
+install.packages("ggplot2")
+library(ggplot2)
+qplot(Wind, Ozone, data = airquality, facets = . ~ factor(Month))
+library(datasets)#
+data(airquality)
+qplot(Wind, Ozone, data = airquality, facets = . ~ factor(Month))
+airquality = transform(airquality, Month = factor(Month))#
+qplot(Wind, Ozone, data = airquality, facets = . ~ Month)
+library(ggplot2)#
+g <- ggplot(movies, aes(votes, rating))#
+print(g)
+str(mpg)
+qplot(displ,hwy,data=mpg,facets=.~drv)
+qplot(displ,hwy,data=mpg,facets=drv)
+qplot(displ,hwy,data=mpg,facets=.~drv)
+qplot(displ,hwy,data=mpg,facets=drv~.)
+qplot(hwy,data=mpg,facets=drv~.)
+qplot(hwy,data=mpg,facets=drv~.,binwidth=1)
+qplot(hwy,data=mpg,facets=drv~.,binwidth=2)
+5
+qplot(hwy,data=mpg,facets=drv~.,binwidth=5)
+qplot(hwy,data=mpg,facets=.~drv,binwidth=5)
+qplot(hwy,data=mpg,facets=.~drv,binwidth=5, fill=displ)
+qplot(hwy,data=mpg,facets=.~drv,binwidth=5, fill=dev)
+qplot(hwy,data=mpg,facets=.~drv,binwidth=5, fill=drv)
+qplot(displ,hwy,data=mpg,facets=.~drv,fill=drv)
+qplot(displ,hwy,data=mpg,facets=.~drv,color=drv)
+qplot(displ,hwy,data=mpg,facets=.~drv,color=cty)
+qplot(displ,hwy,data=mpg,facets=.~drv,color=fl)
+qplot(displ,hwy,data=mpg,facets=.~drv,color=class)
+str(mpg)
+qplot(displ,hwy,data=mpg,facets=.~drv,color=cyl)
+str(maacs)
+str(movies)
+qplot(votes, rating, data = movies)
+qplot(votes, rating, data = movies,smooth="loess")
+qplot(votes, rating, data = movies)+geom_smooth()
+qplot(votes, rating, data = movies)+stats_smooth("loess")
+qplot(votes, rating, data = movies, panel=panel.loess)
+qplot(votes, rating, data = movies, smooth="loess")
+qplot(votes, rating, data = movies)+geom_smooth(method=lm)
+qplot(votes, rating, data = movies)+geom_smooth()
+qplot(votes, rating, data = movies,geom=c("point","smooth"))
+qplot(votes, rating, data = movies,geom=c("point","smooth"),method=lm)
+print.trellis()
+testdata<-data.frame(x=1:100, y=rnorm(100))
+testdata[50,2]<-100
+plot(testdata$x,testdata$y,type="1",ylim=c(-3,3))
+plot(testdata$x,testdata$y,type="l",ylim=c(-3,3))
+g<-ggplot(testdata,aes(x=x,y=y))
+g_geom_line()
+g+geom_line()
+g+geom_point()
+g+geom_point()+geom_smooth()
+g+geom_point()+geom_smooth()+ylim(-3,3)
+g+geom_point()+geom_smooth()+coord_cartesian(ylim=c(-3,3))
+g+geom_point()+geom_smooth()+ylim(-3,3)
+g+geom_line()+geom_smooth()+ylim(-3,3)
+g+geom_line()+geom_smooth()+coord_cartesian(ylim=c(-3,3))
+con=url("https://api.github.com/users/jtleek/repos")
+htmlCode=readLines(con)
+library(httr)
+htnl2=get(con)
+url="https://api.github.com/users/jtleek/repos"
+htnl2=get(con)
+htnl2=get(url)
+html2=GET(url)
+html2
+content2=content(html2, as="text")
+content
+content2
+parsedText=htmlParse(content2,as.Text=T)
+pg2=GET("http://httpbin.org/basic-auth/user/passwd", authenticate("user","passwd"))
+pg2
+pg2=GET("https://api.github.com/users/jtleek/repos", authenticate("user","passwd"))
+pg2
+names(pg2)
+json1=jsonlite::fromJSON(toJSON(pg2))
+install.packages("json")
+install.packages("jsonlite")
+json1=jsonlite::fromJSON(toJSON(pg2))
+json1=jsonlite::fromJSON(pg2)
+library(httr)
+url="https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06pid.csv "
+csv=GET(url)
+getwd()
+read.table("../household_power_consumption.txt",header=T, sep=";")
